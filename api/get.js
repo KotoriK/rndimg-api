@@ -13,5 +13,6 @@ module.exports =
             res.setHeader('Cache-Control', 'max-age=2592000, public')
         } else {
             res.status(404)
+            res.send()
         }
     }
