@@ -9,8 +9,8 @@ module.exports =
     (req, res) => {
         const { index, type = 'img' } = req.query
         if (index >= range[0] && index <= range[1]) {
-            res.redirect(302, url + index + type === 'info' ? '.json' : '.webp')
             res.setHeader('Cache-Control', 'max-age=2592000, public')
+            res.redirect(302, url + index + type === 'info' ? '.json' : '.webp')
         } else {
             res.status(404)
             res.send()
